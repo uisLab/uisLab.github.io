@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="Meiyi">
+    <link rel="icon" href="pic/logo2.ico">
+
+    <title>Mental Health And Affective Computing</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="jumbotron.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
+    <style>
+      hr { 
+          display: block;
+          margin-top: 0.5em;
+          margin-bottom: 0.5em;
+          margin-left: auto;
+          margin-right: auto;
+          border-style: inset;
+          border-width: 1px;
+      } 
+    </style>
+
+    <style>
+    #cityguarddetails {
+        width: 100%;
+        padding: 50px 0;
+        text-align: center;
+        /*background-color: lightblue;*/
+        margin-top: 20px;
+        display:none;
+    }
+  </style>
+
+  
+
+    <style>
+    #cityresolverdetails {
+        width: 100%;
+        padding: 50px 0;
+        text-align: center;
+        /*background-color: lightblue;*/
+        margin-top: 20px;
+        display:none;
+    }
+  </style>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Mental Health And Affective Computing</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <!-- <li><a href="#demo">Demos</a></li> -->
+            <li><a href="#publication">Publication</a></li>
+            <li><a href="#people">People</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->        
+      </div>
+    </nav>
+
+
+
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <div class="row">
+        <div class="col-md-9">
+        <h1>Mental Health And Affective Computing</h1>
+        <p><a class="btn btn-primary btn-lg" href="#publication" role="button">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-2">
+          <img src="pic/linklab.png" alt="linklab" style="width:250px;" >
+        </div>
+        <div class="col-md-2">
+          <img src="pic/logo3.png" alt="logo3" style="width:180px;" >          
+        </div>
+
+      </div>
+        
+        
+            
+      </div>
+    </div>
+
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <h1>Anxiety And Depression: </h1>
+      <h3>A Weakly Supervised Learning Framework For Detecting Social Anxiety And Depression</h3><br>
+      <div class="row">
+        <div class="col-md-4">
+          <img src="pic/angdep.png" alt="angdep" style="height:300px;width:550px;" >
+        </div>
+        <div class="col-md-2">
+
+       </div>
+        <div class="col-md-6">
+          <!-- <h2>CityGuard in the Smart City</h2> -->
+          <p>Although social anxiety and depression are common, they are often underdiagnosed and undertreated, in part due to difficulties identifying and accessing individuals in need of services. Current assessments rely on client self-report and clinician judgment, which are vulnerable to social desirability and other subjective biases. Identifying objective, nonburdensome markers of these mental health problems, such as features of speech, could help advance assessment, prevention, and treatment approaches. Prior research examining speech detection methods has focused on fully supervised learning approaches employing strongly labeled data. However, strong labeling of individuals high in symptoms or state affect in speech audio data is impractical, in part because it is not possible to identify with high confidence which regions of a long speech indicate the person's symptoms or affective state. We propose a weakly supervised learning framework for detecting social anxiety and depression from long audio clips. Specifically, we present a novel feature modeling technique named NN2Vec that identifies and exploits the inherent relationship between speakers' vocal states and symptoms/affective states. Detecting speakers high in social anxiety or depression symptoms using NN2Vec features achieves F-1 scores 17% and 13% higher than those of the best available baselines. In addition, we present a new multiple instance learning adaptation of a BLSTM classifier, named BLSTM-MIL. Our novel framework of using NN2Vec features with the BLSTM-MIL classifier achieves F-1 scores of 90.1% and 85.44% in detecting speakers high in social anxiety and depression symptoms.</p>
+          <p><a class="btn btn-default" href="#publication" role="button">View details &raquo;</a></p>
+
+        </div>
+      </div>
+    </div> <!-- /container -->
+ <br> <br> <br>
+
+
+<!-- <button onclick="myFunction()">Try it</button> -->
+
+<div id="angdepdetails">
+</div>
+
+
+<script>
+function myFunction() {
+    var x = document.getElementById("cityguarddetails");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+
+ <hr>
+
+ 
+ <div class="container">
+      <!-- Example row of columns -->
+      <!-- <h1>Real Time DER: </h1> -->
+      <h2>Real Time Distant Speech Emotion Recognition in Indoor Environments</h2><br>
+      <div class="row">
+
+        <div class="col-md-6">
+          <!-- <h2>CityGuard in the Smart City</h2> -->
+          <p>We develop solutions to various challenges in different stages of the processing pipeline of a real time indoor distant speech emotion recognition system to reduce the discrepancy between training and test conditions for distant emotion recognition. We use a novel combination of distorted feature elimination, classifier optimization, several signal cleaning techniques and train classifiers with synthetic reverberation obtained from a room impulse response generator to improve performance in a variety of rooms with various source-to-microphone distances. Our comprehensive evaluation is based on a popular emotional corpus from the literature, two new customized datasets and a dataset made of YouTube videos. The two new datasets are the first ever distance aware emotional corpuses and we created them by 1) injecting room impulse responses collected in a variety of rooms with various source-to-microphone distances into a public emotional corpus; and by 2) re-recording the emotional corpus with microphones placed at different distances. The overall performance results show as much as 15.51% improvement in distant emotion detection over baselines, with a final emotion recognition accuracy ranging between 79.44%-95.89% for different rooms, acoustic configurations and source-to-microphone distances. We experimentally evaluate the CPU time of various system components and demonstrate the real time capability of our system.
+            </p>
+          <p><a class="btn btn-default" href="#publication" role="button">View details &raquo;</a></p>
+        </div>
+
+        <div class="col-md-4">
+          <img src="pic/RTDER.png" alt="RTDER" style="height:210px;width:540px;" >
+        </div>	   
+	   
+      </div>
+    </div> <!-- /container -->
+ <br> <br> <br>
+
+
+<!-- <button onclick="myFunction()">Try it</button> -->
+
+<div id="cityresolverdetails">
+</div>
+
+
+<script>
+function resolverFunction() {
+    var x = document.getElementById("cityresolverdetails");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+
+
+<hr>
+ 
+<!-- DER: -->
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <h1>DER: </h1>
+      <h3>Distant emotion recognition</h3><br>
+      <div class="row">
+        <div class="col-md-4">
+          <img src="pic/DERPIC.png" alt="DERPIC" style="width:460px;" >
+        </div>
+        <div class="col-md-2">
+
+       </div>
+        <div class="col-md-6">
+          <!-- <h2>CityGuard in the Smart City</h2> -->
+          <p>Distant emotion recognition (DER) extends the application of speech emotion recognition to the very challenging situation that is determined by variable speaker to microphone distances. The performance of conventional emotion recognition systems degrades dramatically as soon as the microphone is moved away from the mouth of the speaker. This is due to a broad variety of effects such as background noise, feature distortion with distance, overlapping speech from other speakers, and reverberation. This paper presents a novel solution for DER, addressing the key challenges by identification and deletion of features from consideration which are significantly distorted by distance, creating a novel, called Emo2vec, feature modeling and overlapping speech filtering technique, and the use of an LSTM classifier to capture the temporal dynamics of speech states found in emotions. A comprehensive evaluation is conducted on two acted datasets (with artificially generated distance effect) as well as on a new emotional dataset of spontaneous family discussions with audio recorded from multiple microphones placed in different distances. Our solution achieves an average 91.6%, 90.1% and 89.5% accuracy for emotion happy, angry and sad, respectively, across various distances which is more than a 16% increase on average in accuracy compared to the best baseline method.
+            </p>
+          <p><a class="btn btn-default" href="#publication" role="button">View details &raquo;</a></p>
+        </div>
+      </div>
+    </div> <!-- /container -->
+ <br> <br> <br>
+
+
+<!-- <button onclick="myFunction()">Try it</button> -->
+
+<div id="cityresolverdetails">
+</div>
+
+
+<script>
+function resolverFunction() {
+    var x = document.getElementById("cityresolverdetails");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+
+
+<hr>
+<!-- 3rd paper -->
+<div class="container">
+      <!-- Example row of columns -->
+      <h1>DAVE: </h1>
+      <h3>Detecting Agitated Vocal Events</h3><br>
+      <div class="row">
+	    <div class="col-md-1">
+
+       </div>
+        <div class="col-md-4">
+          <img src="pic/DAVE.png" alt="DAVE" style="width:340px;" >
+        </div>
+        <div class="col-md-1">
+
+       </div>
+        <div class="col-md-6">
+          <!-- <h2>CityGuard in the Smart City</h2> -->
+          <p>DAVE is a comprehensive set of event detection techniques to monitor and detect 5 important verbal agitations: asking for help, verbal sexual advances, questions, cursing, and talking with repetitive sentences. The novelty of DAVE includes combining acoustic signal processing with three different text mining paradigms to detect verbal events (asking for help, verbal sexual advances, and questions) which need both lexical content and acoustic variations to produce
+accurate results. To detect cursing and talking with repetitive sentences we extend word sense disambiguation and sequential pattern mining algorithms. The solutions have applicability to monitoring dementia patients, for online video sharing applications, human computer interaction (HCI) systems, home safety, and other health care applications. A comprehensive performance evaluation across multiple domains includes audio clips collected from 34 real dementia patients, audio data from controlled environments, movies and Youtube clips, online data repositories, and healthy residents in real homes. The results show significant improvement over baselines and high accuracy for all 5 vocal events.
+            </p>
+          <p><a class="btn btn-default" href="#publication" role="button">View details &raquo;</a></p>
+        </div>
+      </div>
+    </div> <!-- /container -->
+ <br> <br> <br>
+ <hr>
+
+
+<!-- 4th paper -->
+<div class="container">
+      <!-- Example row of columns -->
+      <!-- <h1>pCruise: </h1> -->
+      <h2>Home Wireless Sensing System for Monitoring Nighttime Agitation and Incontinence in Patients with Alzheimer’s Disease</h2><br>
+      <div class="row">
+
+        <div class="col-md-6">
+          <!-- <h2>CityGuard in the Smart City</h2> -->
+          <p>Patients with Alzheimer’s Disease (AD) often experience urinary incontinence and agitation during sleep. There is some evidence that these phenomena are related, but the relationships (and the subsequent opportunity for caregiver intervention) has never been formally studied. In this work,
+the relationships among the times of occurrence of nighttime agitation, sleep continuity and duration, and urinary incontinence are identified for persons with AD by using innovative, non-invasive technology. Deployments in 12 homes demonstrate both the utility of the technical monitoring system and the discovered correlations between agitation and incontinence for these 12 AD patients. Implications of possible interventions are discussed. Lessons learned for technical, non-technical and health care implications are presented.
+            </p>
+          <p><a class="btn btn-default" href="#publication" role="button">View details &raquo;</a></p>
+        </div>
+
+        <div class="col-md-4">
+          <img src="pic/alzheimers.png" alt="alzheimers" style="height:280px;width:575px;" >
+        </div>		
+      </div>
+    </div> <!-- /container -->
+ <br> <br> <br>
+ <hr>
+
+
+
+<!-- 5th paper -->
+<div class="container">
+      <!-- Example row of columns -->
+      <h1>SocialSense: </h1>
+      <h3>A Collaborative Mobile Platform for Speaker and Mood Identification</h3><br>
+      <div class="row">
+        <div class="col-md-4">
+          <img src="pic/socialsense.png" alt="socialsense" style="width:570px;" >
+        </div>
+        <div class="col-md-2">
+
+       </div>
+        <div class="col-md-6">
+          <!-- <h2>CityGuard in the Smart City</h2> -->
+          <p>SocialSense is a collaborative smartphone based speaker and mood identification and reporting system that uses a user's voice to detect and log his/her speaking and mood episodes. SocialSense collaboratively works with other phones that are running the app present in the vicinity to periodically send/receive speaking and mood vectors to/from other users present in a social interaction setting, thus keeping track of the global speaking episodes of all users with their mood. In addition, it utilizes a novel event-adaptive dynamic classification scheme for speaker identification which updates the speaker classification model every time one or more users enter or leave the scenario, ensuring a most updated classifier based on user presence. Evaluation of using dynamic classifiers shows that SocialSense improves speaker identification accuracy by 30% compared to traditional static speaker identification systems, and a 10% to 43% performance boost under various noisy environments. SocialSense also improves the mood classification accuracy by 4% to 20% compared to the base-line approaches. Energy consumption experiments show that its device daily lifetime is between 10-14 hours.
+            </p>
+          <p><a class="btn btn-default" href="#publication" role="button">View details &raquo;</a></p>
+        </div>
+      </div>
+    </div> <!-- /container -->
+ <br> <br> <br>
+ <hr>
+
+
+
+<!-- 6th paper -->
+<div class="container">
+      <!-- Example row of columns -->
+      <h1>MOBI-COG: </h1>
+      <h3>A Mobile Application for Instant Screening of Dementia Using the Mini-Cog Test</h3><br>
+      <div class="row">
+
+        <div class="col-md-6">
+          <!-- <h2>CityGuard in the Smart City</h2> -->
+          <p>MOBI-COG is an application that runs on a mobile device, such as a tablet or a smartphone, and provides an automated and instant dementia screening service. The MOBI-COG App is a complete automation of a widely used 3-minute dementia screening test called the Mini-Cog test, which is administered by primary caregivers for a quick screening of dementia in elderly. Besides asking the patient to remember and then recall a set of three words, the test involves a free-hand clock drawing test. The MOBI-COG App automates all these steps including the automatic assessment of the correctness of a clock drawn on the touch screen of a mobile device. We train the MOBI-COG App with over 1000 touch-drawn clocks and show that the system is capable of detecting and recognizing digits in less than 100 ms, in-situ (i.e. without the help of any back-end server), with 99.53% accuracy, and is robust to changes in people, sizes of the drawn digits, and screen sizes of the mobile devices. We perform a usability study of MOBI-COG involving eight healthy human subjects and show that the system is capable of performing all three steps of the test effectively. We also provide a summary of the users' comments on the application.
+            </p>
+          <p><a class="btn btn-default" href="#publication" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+          <img src="pic/mobicog.png" alt="mobicog" style="height:310px;width:600px;" >
+        </div>		
+
+      </div>
+    </div> <!-- /container -->
+ <br> <br> <br>
+ <hr>
+
+
+ <!-- 7th paper -->
+<div class="container">
+      <!-- Example row of columns -->
+      <h1>Kintense: </h1>
+      <h3>A robust, accurate, real-time and evolving system for detecting aggressive actions from streaming 3D skeleton data</h3><br>
+      <div class="row">
+        <div class="col-md-4">
+          <img src="pic/kintense.png" alt="kintense" style="width:340px;" >
+        </div>
+        <div class="col-md-2">
+
+       </div>
+        <div class="col-md-6">
+          <!-- <h2>CityGuard in the Smart City</h2> -->
+          <p>Kintense is a robust, accurate, real-time, and evolving system for detecting aggressive actions such as hitting, kicking, pushing, and throwing from streaming 3D skeleton joint coordinates obtained from Kinect sensors. Kintense uses a combination of: (1) an array of supervised learners to recognize a predefined set of aggressive actions, (2) an unsupervised learner to discover new aggressive actions or refine existing actions, and (3) human feedback to reduce false alarms and to label potential aggressive actions. This paper describes the design and implementation of Kintense and provides empirical evidence that the system is 11% – 16% more accurate and 10% – 54% more robust to changes in distance, body orientation, speed, and person when compared to standard techniques such as dynamic time warping (DTW) and posture based gesture recognizers. We deploy Kintense in two multi-person households and demonstrate how it evolves to discover and learn unseen actions, achieves up to 90% accuracy, runs in real-time, and reduces false alarms with up to 13 times fewer user interactions than a typical system.
+            </p>
+          <p><a class="btn btn-default" href="#publication" role="button">View details &raquo;</a></p>
+        </div>
+      </div>
+    </div> <!-- /container -->
+ <br> <br> <br>
+ <hr>
+
+
+ <!-- 8th paper -->
+<div class="container">
+      <!-- Example row of columns -->
+      <h1>KinSpace: </h1>
+      <h3>Passive Obstacle Detection via Kinect</h3><br>
+      <div class="row">
+        <div class="col-md-6">
+          <!-- <h2>CityGuard in the Smart City</h2> -->
+          <p>Falls are a significant problem for the elderly living independently in the home. Many falls occur due to household objects left in open spaces. We present KinSpace, a passive obstacle detection system for the home. KinSpace employs the use of a Kinect sensor to learn the open space of an environment through observation of resident walking patterns. It then monitors the open space for obstacles that are potential tripping hazards and notifies the residents accordingly. KinSpace uses real-time depth data and human-in-the-loop feedback to adjust its understanding of the open space of an environment. We present a 5,000-frame deployment dataset spanning multiple homes and classes of objects. We present results showing the effectiveness of our underlying technical solutions in identifying open spaces and obstacles. The results for both lab testing and a deployment in an actual home show roughly 80% accuracy for both open space detection and obstacle detection even in the presence of many real-world issues. Consequently, this new technology shows great potential to reduce the risk of falls in the home due to environmental hazards.
+            </p>
+          <p><a class="btn btn-default" href="#publication" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+          <img src="pic/kinspace.png" alt="kinspace" style="width:430px;" >
+        </div>
+      </div>
+    </div> <!-- /container -->
+ <br> <br> <br>
+ <hr>
+
+
+
+
+
+
+<!--**************************************** DEMO ****************************************-->
+    <div class="container">
+       
+
+
+<a name="publication"></a><br>
+
+
+
+<div class="row">
+<div class="col-md-12">
+          
+<h2>Publications</h2>
+
+<ul style="list-style-type:circle">
+
+<li>Asif Salekin, Jeremy W. Eberle, Jeffrey J. Glenn, Bethany A. Teachman, and John A. Stankovic. 2018. A Weakly Supervised Learning Framework for Detecting Social Anxiety and Depression, ACM Interactive, Mobile, Wearable, and Ubiquitious Technologies (IMWUT), Vol. 2, No. 2, Article 81 (June 2018), 26 pages. (and Ubicomp 2018) <a href="https://www.cs.virginia.edu/~as3df/paper/imwut-asif-2018.pdf" download>[pdf]</a></li> <br>
+
+
+<li>M. Ahmed, Z. Chen, E. Fass, and J. Stankovic, Real-Time Distant Speech Emotion Recognition in Indoor Environments, Mobiquitous, Nov. 2017. <a href="https://pdfs.semanticscholar.org/480c/ff47ce879ec06ee346e645b399fc53b7ca93.pdf" download>[pdf]</a></li> <br>
+
+<li>A. Salekin, Z. Chen, M. Ahmed, J. Lach, D. Metz, K. de la Haye, B. Bell, and J. Stankovic, Distance Emotion Recognition, ACM Interactive, Mobile, Wearable, and Ubiquitious Technologies (IMWUT), Vol. 1, Issue 3, Sept. 2017, 96:1-96:24 (Ubicomp 2017) <a href="https://www.cs.virginia.edu/~stankovic/psfiles/DistantEMotionRecognition.pdf" download>[pdf]</a></li> <br>
+
+<li>A. Salekin, H. Wang, K. Williams, and J. Stankovic, DAVE: Detecting Agitated Vocal Events, IEEE CHASE, July 2017.  <a href="https://www.cs.virginia.edu/~stankovic/psfiles/DAVACHASE2017-Final-1.pdf" download>[pdf]</a></li> <br>
+
+
+<li>A. Salekin, H. Wang, and J. Stankovic, Demo Abstract: KinVocal: Detecting Agitated Vocal Events, ACM Sensys, Nov. 2015. <a href="http://www.cs.virginia.edu/~stankovic/psfiles/demovocal.pdf" download>[pdf] </a></li><br>
+
+<li>J. Gong, K. Rose, I. Emi, J. Specht, E. Hoque, D. Fan, S. Dandu, R. Dickerson, Y. Perkounkova, J. Lach, and J. Stankovic, Home Wireless Sensing System for Monitoring Incontinence and Sleep Agitation, Wireless Health, Oct. 2015.  <a href="http://www.cs.virginia.edu/~stankovic/psfiles/WH2015-dementia.pdf" download>[pdf] </a></li><br>
+
+<li>M. Ahmed, S. Kenkeremath, and J. Stankovic, SocialSense: A Collaborative Mobile Platform for Speaker and Mood Identification, EWSN, Feb. 2015. <a href="https://qosbox.cs.virginia.edu/~stankovic/psfiles/socialsense.pdf" download>[pdf]</a></li><br>
+
+<li>S. Nirjon, I. Emi, A. Mondol, A. Salekin, and J. Stankovic, MOBI-COG: A Mobile Application for Instant Screening of Dementia Using the Mini-COG Test, Wireless Health, Oct. 2014. <a href="http://www.cs.virginia.edu/~stankovic/psfiles/Mobi-cogWH.pdf" download>[pdf]</a></li><br>
+
+<li>S. Nirjon, C. Greenwood, C. Torres, S. Zhou, J. Stankovic, H. Yoon, H. Ra, C. Basaran, T. Park, and S. Son, Kintense: A Robust, Accurate, Real-Time and Evolving System for Detecting Aggressive Actions from Streaming 3D Skeleton Data, PerCom2014, March 2014. (acceptance rate 14%). <a href="https://www.cs.virginia.edu/~stankovic/psfiles/kintense.pdf" download>[pdf]</a></li><br>
+
+
+<li>C. Greenwood, S. Nirjon, J. Stankovic, H. Yoon, H. Ra, T. Park, S. Son, KinSpace: Passive Obstacle Detection via Kinect, EWSN, Feb. 2014. <a href="http://qosbox.cs.virginia.edu/~stankovic/psfiles/kinspace-ewsn.pdf" download>[pdf]</a></li><br>
+
+
+<!-- <a href="" download>[pdf]</a>  <a href="">[link] <a href="">[Slides]</a></li><br> -->
+         
+<!-- <li>D. Zheng, T. He, S. Lin, S. Munir, and J. Stankovic, Taxi-Passenger-Demand Modeling
+for an Extremely Large Roving Sensor Network, IEEE Trans. on Big Data, to appear. </li> <br>
+
+<li>X. Sun, S. Hu, L. Su, T. Abdelzaher, P. Hui, W. Zheng, H. Liu, and J. Stankovic,
+Participatory Sensing Meets Opportunistic Sharing: Automatic Phone-to-Phone Com-
+munication in Vehicles, IEEE Trans. on Mobile Computing, to appear. </li> <br>
+
+
+
+
+
+<li>D. Zhang, T. He, Y. Liu, S. Lin, J. Stankovic, A Carpooling Recommendation System
+for Taxicab Services, IEEE TETC, Vol. 2, Issue 3, Sept. 2014, pp. 254-266. <a href="http://ieeexplore.ieee.org/document/6894613/?arnumber=6894613">[link]</a></li> <br>
+
+<li>F. Miao, S. Han, A. Hendawi, J. Stankovic, and G. Pappas, Data-Driven Distribu-
+tionally Robust Vehicle Balancing Using Dynamic Region Partitioning, submitted to
+ICCPS, Oct. 2016. </li> <br>
+
+<li>H. Liu and J. Stankovic, Suspicious Vehicle Tracking with Sparse Video Surveillance
+Cameras and Mobile Taxicabs, submitted to Infocom 2017, July 2016. </li> <br>
+
+<li>A. Hendawi, M. Khalefa, H. Liu, M. Ali, and J. Stankovic, A Vision for Micro and
+Macro Location Aware Services, SIGSPATIAL ’16, Nov. 2016.  <a href="https://www.cs.virginia.edu/~stankovic/psfiles/VisionSigSpa.pdf"> [link] </a></li> <br>
+
+<li>H. Liu and J. Stankovic, Efficient and Proactive V2V Information Diffusion using
+Named Data Networking, IWQoS, June 2016. <a href="http://ieeexplore.ieee.org/abstract/document/7590391/">[link]</a></li> <br>
+
+<li>F. Miao, S. Lin, S. Munir, J. Stankovic, H. Huang, D. Zheng, T. He, and G. Pappas,
+Taxi Dispatch with Real-Time Sensing Data in Metropolitan Areas - a Receding Horizon
+Control Approach. ICCPS, Finalist for Best Paper Award, April 2015. <a href="http://ieeexplore.ieee.org/document/7438925/?arnumber=7438925">[link]</a></li> <br>
+
+
+
+<li>S. Hu, H. Liu, L. Su, H. Wang, T. Abdelzaher, P. Hui, W. Zheng, Z. Xie, and J.
+Stankovic, Towards Automatic Phone-to-Phone Communication for Vehicular Network-
+ing Applications, Infocom, April 2014. <a href="http://ieeexplore.ieee.org/document/6848113/authors?ctx=authors">[link]</a></li> <br>
+
+<li>D. Zhang, T. He, Y. Liu, J. Stankovic, CallCab: A Unified Recommendation System
+for Carpooling and Regular Taxicab Services, IEEE BigData 2013, acceptance ratio
+17%, October 2013. <a href="">[link]</a></li> <br>
+ --></ul>
+        </div>
+        </div>
+      <br>
+<hr>
+
+      <div class="row">
+        <div class="col-md-4">
+          <a name="people"></a>
+          <h2>People</h2>         
+          <p><b><a href = "http://www.cs.virginia.edu/~hs6ms/">John A. Stankovic (PI)</a></b></p>
+          <p>BP America Professor, Director, Link Lab</p>
+          <p>Department of Computer Science</p>
+          <p>University of Virginia</p><br>
+
+          <p><b><a href = "http://www.cs.virginia.edu/~as3df/">Asif Salekin</a> </b>  </p>
+          <p>Ph.D. Candidate </p>
+          <p>Department of Computer Science</p>
+          <p>University of Virginia</p><br>
+
+          <p><b>Mohsin Ahmed </b></p>
+          <p>Ph.D. Candidate </p>
+          <p>Department of Computer Science</p>
+          <p>University of Virginia</p><br>
+		  
+          <p><b>Zeya Chen </b>  </p>
+          <p>Ph.D. Candidate </p>
+          <p>Department of Computer Science</p>
+          <p>University of Virginia</p><br>	
+		  
+          <p><b>Ifat Afrin Emi </b>  </p>
+          <p>Ph.D. Candidate </p>
+          <p>Department of Computer Science</p>
+          <p>University of Virginia</p><br>
+
+          <p><b>Md Abu Sayeed Mondol </b>  </p>
+          <p>Ph.D. Candidate </p>
+          <p>Department of Computer Science</p>
+          <p>University of Virginia</p><br>		  	  
+
+        </div>
+        </div>
+      <br>
+
+
+
+
+
+      <hr>
+      <footer>
+        <p>&copy; University of Virginia</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
+
+
+
