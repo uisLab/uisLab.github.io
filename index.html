@@ -3,32 +3,38 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>UIS Lab @ ASU — Welcome</title>
-  <meta name="description" content="Welcome to the Laboratory for Ubiquitous & Intelligent Sensing (UIS Lab) at Arizona State University." />
-  <link rel="icon" href="pic/SUlogo.png" />
+  <title>UIS Lab — Welcome</title>
+  <meta name="description" content="Welcome to the Laboratory for Ubiquitous & Intelligent Sensing (UIS Lab). Human‑centered AI • Ubiquitous sensing • Fair & robust ML." />
+  <link rel="icon" href="pic/uislab.png" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
-    :root { --navy:#0a2540; --gold:#ffc627; }
+    :root { --navy:#0b2239; --accent:#e9f2ff; --gold:#ffd166; }
     body { color:#1b1f23; }
     .navbar { background: var(--navy); }
     .navbar .navbar-brand, .navbar .nav-link { color:#fff !important; }
-    .hero { background: linear-gradient(135deg, var(--navy), #1f3a5f); color:#fff; padding: 96px 0; }
+    .hero { background: linear-gradient(135deg, var(--navy), #1f3a5f); color:#fff; padding: 92px 0; }
     .hero h1 { font-weight: 800; }
+    .hero p.lead { opacity: .95; }
     .btn-lab { background: var(--gold); border: none; color:#1b1f23; font-weight:600; }
+    .section { padding: 60px 0; }
+    .section h2 { font-weight: 800; color: #0b2239; }
     footer { background:#0e1c2f; color:#cfd8e3; padding:24px 0; }
+    .people-list li { margin-bottom: .5rem; }
   </style>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg fixed-top" role="navigation" aria-label="Main Navigation">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#">UIS Lab @ ASU</a>
+      <a class="navbar-brand fw-bold" href="#">UIS Lab</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon" style="filter: invert(1)"></span>
       </button>
       <div id="nav" class="collapse navbar-collapse">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="people.html">People</a></li>
-          <li class="nav-item"><a class="nav-link" href="mailto:asif.salekin@asu.edu">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">What We Do</a></li>
+          <li class="nav-item"><a class="nav-link" href="#people">People</a></li>
+          <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -37,21 +43,87 @@
   <header class="hero text-center">
     <div class="container">
       <h1 class="display-5 mb-3">Welcome to the UIS Lab</h1>
-      <p class="lead mb-4">Laboratory for Ubiquitous & Intelligent Sensing — Arizona State University (SBHSE)</p>
+      <p class="lead mb-4">Laboratory for Ubiquitous & Intelligent Sensing — human‑centered AI, ubiquitous sensing, and fair, robust machine learning.</p>
       <div class="d-flex justify-content-center gap-3 flex-wrap">
-        <a class="btn btn-lab btn-lg" href="people.html">Meet the Team</a>
-        <a class="btn btn-outline-light btn-lg" href="mailto:asif.salekin@asu.edu">Email Us</a>
+        <a class="btn btn-lab btn-lg" href="#people">Meet the People</a>
+        <a class="btn btn-outline-light btn-lg" href="#publications">See Publications</a>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- Minimal welcome page — no extra sections by request -->
+    <!-- What we do -->
+    <section class="section" id="about">
+      <div class="container">
+        <h2>What the Lab Does</h2>
+        <p class="fs-5">We design practical sensing and AI systems that work in real life, not just in the lab. Our work blends ubiquitous computing, machine learning, and human factors to improve health and wellbeing.</p>
+        <ul class="fs-6">
+          <li><strong>Human‑centered AI:</strong> interpretable, privacy‑aware models for mobile and wearable sensing.</li>
+          <li><strong>Fair & robust ML:</strong> methods that handle natural distribution shifts and personalize responsibly.</li>
+          <li><strong>Edge & CPS:</strong> efficient, reliable models for resource‑constrained devices and deployments.</li>
+          <li><strong>Application areas:</strong> stress & affect, speech and motor disorders, chronic conditions, and population health.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- People (no photos, brief bios) -->
+    <section class="section bg-light" id="people">
+      <div class="container">
+        <h2>Meet the People</h2>
+        <h3 class="h5 mt-4">Supervisor</h3>
+        <ul class="people-list">
+          <li><strong>Prof. Asif Salekin (PI)</strong> — Leads UIS Lab. Research interests: human‑centered AI, mobile/wearable sensing, fairness, robustness, interpretability, privacy & reliability.</li>
+        </ul>
+
+        <h3 class="h5 mt-4">Ph.D. Students</h3>
+        <ul class="people-list">
+          <li><strong>Yi Xiao</strong> — Stress sensing and multimodal learning; co‑teaching and thermal signals for non‑intrusive inference.</li>
+          <li><strong>Harshit Sharma</strong> — Interpretable multimodal models with psychophysiology; child speech disfluency analysis.</li>
+          <li><strong>Shaily Roy</strong> — Fairness‑aware federated learning; cluster‑aware personalization for digital health.</li>
+          <li><strong>Sachin Deb</strong> — Ubiquitous computing and machine learning for health applications.</li>
+        </ul>
+
+        <h3 class="h5 mt-4">Graduated Ph.D. Students</h3>
+        <ul class="people-list">
+          <li><strong>Jingyu Xin</strong> — Secure & trustworthy human‑centric sensing; defenses against data‑injection attacks.</li>
+          <li><strong>Brian Philip Testa</strong> — Emotional privacy and adversarial audio for speech emotion systems.</li>
+          <li><strong>Sawinder Kaur</strong> — Verified robust compressed networks; context‑robust personalization.</li>
+        </ul>
+
+        <h3 class="h5 mt-4">M.S. & Undergraduate Researchers</h3>
+        <ul class="people-list">
+          <li><strong>Laxman Kumar</strong>, <strong>Guillermo Ramon Sanchez</strong>, <strong>Lohith Srikanth Pentapalli</strong>, <strong>Anusha Prakash</strong>, <strong>Jeffrey Ching</strong>, <strong>Mudit Dham</strong>, <strong>Fang Ziqi</strong>, <strong>Avery T. Gump</strong>, <strong>Peter Cheng</strong> — Contributing to sensing pipelines, modeling, and evaluation.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Publications (short, with link to full) -->
+    <section class="section" id="publications">
+      <div class="container">
+        <h2>Selected Recent Publications</h2>
+        <ul>
+          <li>Yi Xiao, Harshit Sharma, <em>et al.</em>, <strong>“Human Heterogeneity Invariant Stress Sensing,”</strong> IMWUT/UbiComp, 2025.</li>
+          <li>Sawinder Kaur, Avery Gump, <em>et al.</em>, <strong>“CRoP: Context‑wise Robust Static Human‑Sensing Personalization,”</strong> IMWUT/UbiComp, 2025.</li>
+          <li>Yi Xiao, Harshit Sharma, Victoria Tumanova, <strong>“Psychophysiology‑aided Perceptually Fluent Speech Analysis of Children Who Stutter,”</strong> ICCPS, 2025.</li>
+          <li>Sawinder Kaur, <em>et al.</em>, <strong>“VeriCompress,”</strong> AAAI, 2024.</li>
+          <li>Brian P. Testa, <em>et al.</em>, <strong>“Privacy against Real‑Time Speech Emotion Detection,”</strong> IMWUT/UbiComp, 2023.</li>
+        </ul>
+        <p class="mb-0"><a href="publications.html">View the complete publications list</a></p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section bg-light" id="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:asif.salekin@asu.edu">asif.salekin@asu.edu</a></p>
+      </div>
+    </section>
   </main>
 
   <footer>
     <div class="container text-center">
-      <small>&copy; <span id="year"></span> UIS Lab — Arizona State University</small>
+      <small>&copy; <span id="year"></span> UIS Lab</small>
     </div>
   </footer>
 
