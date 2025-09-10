@@ -20,6 +20,26 @@
     .section h2 { font-weight: 800; color: #0b2239; }
     footer { background:#0e1c2f; color:#cfd8e3; padding:24px 0; }
     .people-list li { margin-bottom: .5rem; }
+    .card {
+        transition: transform 0.2s;
+        border: none;
+        background-color: #fff;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+    }
+    .card-img-top {
+        width: 250px;
+        object-fit: cover;
+        /* width: 100%;
+        height: 80%; */
+    }
+    .professor-card-img-top {
+        width: 250px; 
+        object-fit: cover;
+        justify-content: center;
+        align-items: center;
+    }
   </style>
 </head>
 <body>
@@ -71,17 +91,87 @@
       <div class="container">
         <h2>Meet the People</h2>
         <h3 class="h5 mt-4">Supervisor</h3>
-        <ul class="people-list">
-          <li><strong>Prof. Asif Salekin (PI)</strong> — Leads UIS Lab. Research interests: human‑centered AI, mobile/wearable sensing, fairness, robustness, interpretability, privacy & reliability.</li>
-        </ul>
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card h-100 shadow-sm">
+                    <div class="d-flex justify-content-center mt-0">
+                      <img src="pic/Asif Salekin_8976.jpg" class="card-img-top " alt="Prof. Asif Salekin">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title" style="padding-left: 30%; padding-right: 30%;">
+                            <a href="https://sachin-deb.github.io/" class="text-decoration-none">Prof. Asif Salekin (PI)</a>
+                            <div class="d-flex mt-2" style="width: 100%; justify-content: space-between; padding-left: 10%; padding-right: 25%;">
+                                <a href="https://www.linkedin.com/in/asif-salekin" class="btn btn-sm btn-outline-primary me-2">
+                                    <i class="bi bi-linkedin"></i> LinkedIn
+                                </a>
+                                <a href="https://scholar.google.com/citations?user=asif-salekin" class="btn btn-sm btn-outline-secondary">
+                                    <i class="bi bi-google"></i> Scholar
+                                </a>
+                            </div>
+                        </h5>
+                        <p class="card-text">Leads UIS Lab. Research interests: human‑centered AI, mobile/wearable sensing, fairness, robustness, interpretability, privacy & reliability.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <h3 class="h5 mt-4">Ph.D. Students</h3>
-        <ul class="people-list">
-          <li><strong><a href = "https://sachin-deb.github.io/"> Yi Xiao </a></strong> — Stress sensing and multimodal learning; co‑teaching and thermal signals for non‑intrusive inference. [<a href="https://www.linkedin.com/in/yi-xiao">LinkedIn</a>]</li>
-          <li><strong><a href = "https://sachin-deb.github.io/"> Harshit Sharma </a></strong> — Responsible and trustworthy AI in ubiquitous sensing applications, with an emphasis on model interpretability, fairness, and privacy.</li>
-          <li><strong><a href = "https://shailyroy.github.io/"> Shaily Roy </a></strong> — Fairness‑aware federated learning; cluster‑aware personalization for digital health.</li>
-          <li><strong><a href = "https://sachin-deb.github.io/"> Sachin Deb </a></strong> — Ubiquitous computing and machine learning for health applications.</li>
-        </ul>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <!-- Yi Xiao Card -->
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="data:image/jpeg;base64,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" class="card-img-top" alt="Yi Xiao">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="https://sachin-deb.github.io/" class="text-decoration-none">Yi Xiao</a>
+                            <a href="https://www.linkedin.com/in/yi-xiao" class="btn btn-sm btn-outline-primary float-end">
+                                <i class="bi bi-linkedin"></i> LinkedIn
+                            </a>
+                        </h5>
+                        <p class="card-text">Stress sensing and multimodal learning; co‑teaching and thermal signals for non‑intrusive inference.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Harshit Sharma Card -->
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://webapp4.asu.edu/photo-ws/directory_photo/hsharm62?size=medium&break=1757538684&blankImage2=1" class="card-img-top" alt="Harshit Sharma">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="https://sachin-deb.github.io/" class="text-decoration-none">Harshit Sharma</a>
+                        </h5>
+                        <p class="card-text">Responsible and trustworthy AI in ubiquitous sensing applications, with an emphasis on model interpretability, fairness, and privacy.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shaily Roy Card -->
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://webapp4.asu.edu/photo-ws/directory_photo/shailyro?size=medium&break=1757538944&blankImage2=1" class="card-img-top" alt="Shaily Roy">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="https://shailyroy.github.io/" class="text-decoration-none">Shaily Roy</a>
+                        </h5>
+                        <p class="card-text">Fairness‑aware federated learning; cluster‑aware personalization for digital health.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sachin Deb Card -->
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://webapp4.asu.edu/photo-ws/directory_photo/sachinde?size=medium&break=1757538825&blankImage2=1" class="card-img-top" alt="Sachin Deb">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="https://sachin-deb.github.io/" class="text-decoration-none">Sachin Deb</a>
+                        </h5>
+                        <p class="card-text">Ubiquitous computing and machine learning for health applications.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <h3 class="h5 mt-4">Graduated Ph.D. Students</h3>
         <ul class="people-list">
