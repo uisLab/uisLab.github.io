@@ -41,10 +41,12 @@
         justify-content: center;
         align-items: center;
     }
-    .carousel-item img {
-        height: 400px;
-        object-fit: cover;
+    /* If you still need this for another carousel, scope it like this */
+    #projectCarousel .carousel-item img {
+      height: 400px;
+      object-fit: cover;
     }
+
     .carousel-caption.position-static {
         position: relative;
         left: 0;
@@ -78,10 +80,81 @@
     .project-tabs .nav-link.active { color:#fff; border-bottom:3px solid var(--gold); background:transparent; }
 
     /* Side-by-side layout */
-    .project-img { width:100%; height:320px; object-fit:cover; border-radius:.5rem; }
-    @media (max-width: 767.98px){
-      .project-img { height:220px; }
+    /* Give the LEFT image column a responsive, fixed height */
+    #proj-security-and-privacy-thrust .carousel-item .col-md-6:first-child {
+      height: clamp(220px, 32vw, 360px); /* mobile → desktop */
+      display: flex;                     /* center image nicely */
+      align-items: center;
+      justify-content: center;
     }
+
+    /* Make the image fully fit inside that space without cropping */
+    .project-img {
+      width: 100%;
+      height: 100%;          /* fill the box set above */
+      object-fit: contain;   /* never crop; letterbox if needed */
+      background: #f8f9fa;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      display: block;
+      margin: 0;
+    }
+
+    #proj-security-and-privacy-thrust .carousel-item { min-height: 360px; }
+    @media (min-width: 768px) {
+      #proj-security-and-privacy-thrust .carousel-item .row { min-height: 340px; }
+    }
+    /* Project 4 carousel: put arrows in the top corners */
+    #projectSecurityCarousel .carousel-control-prev,
+    #projectSecurityCarousel .carousel-control-next {
+      position: absolute;
+      top: .5rem;          /* distance from top */
+      bottom: auto;        /* stop full-height overlay */
+      transform: none;     /* remove vertical centering */
+      width: auto;         /* shrink clickable area */
+      height: auto;
+      padding: 0;
+      align-items: flex-start;   /* no vertical centering */
+      justify-content: center;
+      z-index: 5;
+      opacity: .95;
+    }
+    .funding-row { gap: 1.25rem; }
+    .funding-item .funding-tile {
+      min-height: 96px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: .75rem;
+      background: #ffffff;
+      border-radius: .5rem;
+      box-shadow: 0 6px 18px rgba(11,34,57,0.06);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .funding-item .funding-tile:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(11,34,57,0.10);
+    }
+    .funding-item .funding-logo {
+      max-height: 64px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+    @media (min-width: 992px) {
+      .funding-item .funding-tile { min-height: 110px; }
+      .funding-item .funding-logo { max-height: 76px; }
+    }
+    
+
+
+
+    /* @media (max-width: 767.98px) {
+      .project-img {
+        max-height: 220px;
+        aspect-ratio: 4 / 3;
+      }
+    } */
 
   </style>
 </head>
@@ -107,7 +180,7 @@
 
   <header class="hero text-center">
     <div class="container">
-      <h1 class="display-5 mb-3">Welcome to the UIS Lab</h1>
+      <h1 class="display-5 mb-3">Welcome to the Ubiquitous & Intelligent Sensing Lab</h1>
       <p class="lead mb-4">Laboratory for Ubiquitous & Intelligent Sensing — human‑centered AI, ubiquitous sensing, and fair, robust machine learning.</p>
       <div class="d-flex justify-content-center gap-3 flex-wrap">
         <a class="btn btn-lab btn-lg" href="#people">Meet the People</a>
@@ -121,13 +194,13 @@
     <section class="section" id="about">
       <div class="container">
         <h2>What the Lab Does</h2>
-        <p class="fs-5">We design practical sensing and AI systems that work in real life, not just in the lab. Our work blends ubiquitous computing, machine learning, and human factors to improve health and wellbeing.</p>
-        <ul class="fs-6">
+        <p class="fs-5">The UIS Lab pioneers intelligent and human-centered sensing technologies to transform health and well-being. We design trustworthy, privacy-aware, and robust AI systems that can sense, interpret, and respond to the complexities of human life—advancing early detection, personalized interventions, and scalable health solutions. By bridging engineering, computing, and biomedical science, we address challenges of distribution shifts, algorithmic fairness, AI ethics, and reliability with optimization methods, explainable AI solutions, and mathematical guarantees for trustworthy performance. Our research advances LLM and foundation model solutions tailored for human sensing—overcoming limited training data, capturing human heterogeneity, and building reasoning that aligns with health experts to deliver reliable, meaningful, and seamlessly integrated healthcare decisions.</p>
+        <!-- <ul class="fs-6">
           <li><strong>Human‑centered AI:</strong> interpretable, privacy‑aware models for mobile and wearable sensing.</li>
           <li><strong>Fair & robust ML:</strong> methods that handle natural distribution shifts and personalize responsibly.</li>
           <li><strong>Edge & CPS:</strong> efficient, reliable models for resource‑constrained devices and deployments.</li>
           <li><strong>Application areas:</strong> stress & affect, speech and motor disorders, chronic conditions, and population health.</li>
-        </ul>
+        </ul> -->
       </div>
     </section>
 
@@ -136,31 +209,84 @@
         <h2 class="mb-4">Our Projects</h2>
 
         <!-- Tag line -->
-        <ul class="nav nav-pills justify-content-between project-tabs mb-4" id="projectTabs" role="tablist">
+        <ul class="nav nav-pills justify-content-center project-tabs mb-4 align-items-center" id="projectTabs" role="tablist">
           <li class="nav-item flex-fill text-center" role="presentation">
-            <a class="nav-link active" id="tab-llm" data-bs-toggle="tab" href="#proj-llm" role="tab"
-              aria-controls="proj-llm" aria-selected="true">Multimodal LLMs ▾</a>
+            <a class="nav-link active" id="tab-stress-sensing" data-bs-toggle="tab" href="#proj-stress-sensing" role="tab"
+              aria-controls="proj-stress-sensing" aria-selected="true">Invariant Stress Sensing</a>
           </li>
           <li class="nav-item flex-fill text-center" role="presentation">
-            <a class="nav-link" id="tab-health" data-bs-toggle="tab" href="#proj-health" role="tab"
-              aria-controls="proj-health" aria-selected="false">Digital Health ▾</a>
+            <a class="nav-link" id="tab-co-teaching" data-bs-toggle="tab" href="#proj-co-teaching" role="tab"
+              aria-controls="proj-co-teaching" aria-selected="false">Co-Teaching</a>
           </li>
           <li class="nav-item flex-fill text-center" role="presentation">
-            <a class="nav-link" id="tab-fair" data-bs-toggle="tab" href="#proj-fair" role="tab"
-              aria-controls="proj-fair" aria-selected="false">Fair & Robust ML ▾</a>
+            <a class="nav-link" id="tab-llm" data-bs-toggle="tab" href="#proj-llm" role="tab"
+              aria-controls="proj-llm" aria-selected="false">Multimodal LLMs</a>
+          </li>
+          <li class="nav-item flex-fill text-center" role="presentation">
+            <a class="nav-link" id="tab-security-and-privacy-thrust" data-bs-toggle="tab" href="#proj-security-and-privacy-thrust" role="tab"
+              aria-controls="proj-security-and-privacy-thrust" aria-selected="false">Security and Privacy Thrust</a>
+          </li>
+          <li class="nav-item flex-fill text-center" role="presentation">
+            <a class="nav-link" id="tab-cps-thrust" data-bs-toggle="tab" href="#proj-cps-thrust" role="tab"
+              aria-controls="proj-cps-thrust" aria-selected="false">CPS Thrust</a>
+          </li>
+          <li class="nav-item flex-fill text-center" role="presentation">
+            <a class="nav-link" id="tab-algorithimic-fairness-thrust" data-bs-toggle="tab" href="#proj-algorithimic-fairness-thrust" role="tab"
+              aria-controls="proj-algorithimic-fairness-thrust" aria-selected="false">Algorithmic Fairness Thrust</a>
+          </li>
+          <li class="nav-item flex-fill text-center" role="presentation">
+            <a class="nav-link" id="tab-ethical-ai-for-healthcare" data-bs-toggle="tab" href="#proj-ethical-ai-for-healthcare" role="tab"
+              aria-controls="proj-ethical-ai-for-healthcare" aria-selected="false">Ethical Ai For healthcare</a>
           </li>
         </ul>
 
         <!-- Tab content -->
         <div class="tab-content" id="projectContent">
 
+
           <!-- Project 1 -->
-          <div class="tab-pane fade show active" id="proj-llm" role="tabpanel" aria-labelledby="tab-llm">
+          <div class="tab-pane fade show active" id="proj-stress-sensing" role="tabpanel" aria-labelledby="tab-stress-sensing">
             <div class="card shadow-sm border-0">
               <div class="card-body">
                 <div class="row align-items-center g-4">
                   <div class="col-md-6">
-                    <img class="project-img" src="https://miro.medium.com/v2/resize:fit:1400/1*h8C3YbA9Xp24iGFUGNJZZw.png" alt="Multimodal LLMs and Trustworthy AI">
+                    <img class="project-img" src="pic/HHISS.png" alt="Human Heterogeneity Invariant Stress Sensing">
+                  </div>
+                  <div class="col-md-6">
+                    <h3 class="h4 mb-2">Human Heterogeneity Invariant Stress Sensing</h3>
+                    <p class="mb-3">Human heterogeneity remains a persistent challenge in wearable-based stress sensing. In this paper, we introduce a pruning-based framework designed to improve AI model generalizability, achieving a 7.8-percentage-point increase in stress detection accuracy under fully unseen subjects and environments.</p>
+                    <a class="btn btn-outline-primary" href="#contact">Collaborate</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="tab-pane fade" id="proj-co-teaching" role="tabpanel" aria-labelledby="tab-co-teaching">
+            <div class="card shadow-sm border-0">
+              <div class="card-body">
+                <div class="row align-items-center g-4">
+                  <div class="col-md-6">
+                    <img class="project-img" src="pic/Co-Teaching.png" alt="Reading between the heat.(Co-teaching)" >
+                  </div>
+                  <div class="col-md-6">
+                    <h3 class="h4 mb-2">Reading between the heat.(Co-teaching)</h3>
+                    <p class="mb-3">Thermal stress sensing often struggles at varying distances and angles, degrading accuracy. We developed ThermaStrain, a co-teaching framework that uses wearable EDA signals during training to teach the thermal modality richer stress features. This enables robust, contactless stress detection at test time—improving accuracy by over 9% across diverse distances and perspectives.</p>
+                    <a class="btn btn-outline-primary" href="#contact">Collaborate</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="tab-pane fade" id="proj-llm" role="tabpanel" aria-labelledby="tab-llm">
+            <div class="card shadow-sm border-0">
+              <div class="card-body">
+                <div class="row align-items-center g-4">
+                  <div class="col-md-6">
+                    <img class="project-img" src="pic/benchmarking.png" alt="Multimodal LLMs and Trustworthy AI">
                   </div>
                   <div class="col-md-6">
                     <h3 class="h4 mb-2">Multimodal LLMs and Trustworthy AI</h3>
@@ -180,22 +306,88 @@
             </div>
           </div>
 
-          <!-- Project 2 -->
-          <div class="tab-pane fade" id="proj-health" role="tabpanel" aria-labelledby="tab-health">
+          <!-- Project 4 -->
+          <!-- Project 4 -->
+          <div class="tab-pane fade" id="proj-security-and-privacy-thrust" role="tabpanel" aria-labelledby="tab-security-and-privacy-thrust">
+            <div class="card shadow-sm border-0">
+              <div class="card-body">
+
+                <div id="projectSecurityCarousel" class="carousel slide" data-bs-ride="false" data-bs-interval="6000">
+                  <!-- Indicators (optional) -->
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#projectSecurityCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#projectSecurityCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  </div>
+
+                  <div class="carousel-inner">
+
+                    <!-- SLIDE 1: Image + Text side-by-side -->
+                    <div class="carousel-item active">
+                      <div class="row align-items-center g-4">
+                        <div class="col-md-6">
+                          <img src="pic/synthetic.drawio.png" class="project-img" alt="Responsible Generative AI for Health Applications">
+                        </div>
+                        <div class="col-md-6 d-flex flex-column justify-content-center">
+                          <h3 class="h4 mb-2">Responsible Generative AI for Health Applications</h3>
+                          <p class="mb-3">
+                            We leverage diffusion and related generative models to create high-utility synthetic health data with
+                            privacy-preserving mechanisms, balancing data utility with strict privacy constraints so researchers
+                            can work with realistic datasets without exposing identifiable human data.
+                          </p>
+                          <a class="btn btn-outline-primary btn-sm w-auto align-self-start" href="#contact"> Collaborate </a>
+
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- SLIDE 2: Image + Text side-by-side -->
+                    <div class="carousel-item">
+                      <div class="row align-items-center g-4">
+                        <div class="col-md-6">
+                          <img src="pic/Vibrosense.png" class="project-img" alt="Everyday Device Sensing">
+                        </div>
+                        <div class="col-md-6 d-flex flex-column justify-content-center">
+                          <h3 class="h4 mb-2">Everyday Device Sensing for Psychological & Physiological States</h3>
+                          <p class="mb-3">
+                            We use signals from everyday devices (phones, wearables) for unobtrusive sensing of stress, social
+                            anxiety, and affect, emphasizing robustness and privacy-first deployment to keep systems effective
+                            and trustworthy at scale.
+                          </p>
+                          <a class="btn btn-outline-primary btn-sm w-auto align-self-start" href="#contact"> Collaborate </a>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <!-- Controls -->
+                  <button class="carousel-control-prev" type="button" data-bs-target="#projectSecurityCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#projectSecurityCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- Project 5 -->
+          <div class="tab-pane fade" id="proj-cps-thrust" role="tabpanel" aria-labelledby="tab-cps-thrust">
             <div class="card shadow-sm border-0">
               <div class="card-body">
                 <div class="row align-items-center g-4">
                   <div class="col-md-6">
-                    <img class="project-img" src="pic/DAVE.png" alt="Digital Health and AI">
+                    <img class="project-img" src="pic/DairyCow_Project.png" alt="Cyber-physical Systems for Cattle wellbeing on Diary Farms" >
                   </div>
                   <div class="col-md-6">
-                    <h3 class="h4 mb-2">Digital Health and AI</h3>
-                    <p class="mb-3">Algorithms for personalized interventions with mobile & wearable sensing.</p>
-                    <ul class="mb-3">
-                      <li>Stress & affect modeling</li>
-                      <li>Speech and motor disorder assessment</li>
-                      <li>Privacy-aware, interpretable pipelines</li>
-                    </ul>
+                    <h3 class="h4 mb-2">Cyber-physical Systems for Cattle wellbeing on Diary Farms</h3>
+                    <p class="mb-3">Our project develops cyber-physical systems that use sensor networks to monitor the health, behavior, and social interactions of dairy cows in real farm environments. By combining localization, motion, and thermal sensing, we aim to understand stress, wellness, and productivity at both the individual and herd level. These tools can help farmers manage animal health more effectively while also advancing broader research in sensing and animal science. Alongside system development, we are addressing key challenges such as energy efficiency, network reliability, and long-term deployment in harsh farm conditions.</p>
                     <a class="btn btn-outline-primary" href="#contact">Collaborate</a>
                   </div>
                 </div>
@@ -203,22 +395,35 @@
             </div>
           </div>
 
-          <!-- Project 3 -->
-          <div class="tab-pane fade" id="proj-fair" role="tabpanel" aria-labelledby="tab-fair">
+          <!-- Project 6 -->
+          <div class="tab-pane fade" id="proj-algorithimic-fairness-thrust" role="tabpanel" aria-labelledby="tab-algorithimic-fairness-thrust">
             <div class="card shadow-sm border-0">
               <div class="card-body">
                 <div class="row align-items-center g-4">
                   <div class="col-md-6">
-                    <img class="project-img" src="pic/CKD-COST.png" alt="Fair and Robust ML">
+                    <img class="project-img" src="pic/CaFe.png" alt="Curvature-Aligned Federated Learning (CAFe): Fairness without Demographics" >
                   </div>
                   <div class="col-md-6">
-                    <h3 class="h4 mb-2">Fair and Robust ML</h3>
-                    <p class="mb-3">Methods that handle distribution shifts and enable responsible personalization.</p>
-                    <ul class="mb-3">
-                      <li>Fairness-aware federated learning</li>
-                      <li>Context-robust personalization</li>
-                      <li>Verified/efficient compressed models</li>
-                    </ul>
+                    <h3 class="h4 mb-2">Curvature-Aligned Federated Learning (CAFe): Fairness without Demographics</h3>
+                    <p class="mb-3">We developed CAFe, a federated learning approach that achieves fairness without relying on sensitive demographic attributes. By aligning loss-landscape curvature during local training and across clients, CAFe balances fairness and performance in decentralized human-sensing applications where bias factors are unknown or latent. Validated through theory, experiments, and real-world deployment on resource-constrained devices, CAFe demonstrates both practical feasibility and strong potential for privacy-preserving, equitable AI at the edge.</p>
+                    <a class="btn btn-outline-primary" href="#contact">Collaborate</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 7 -->
+          <div class="tab-pane fade" id="proj-ethical-ai-for-healthcare" role="tabpanel" aria-labelledby="tab-ethical-ai-for-healthcare">
+            <div class="card shadow-sm border-0">
+              <div class="card-body">
+                <div class="row align-items-center g-4">
+                  <div class="col-md-6">
+                    <img class="project-img" src="pic/Ethical_AI_For_HealthCare.png" alt="Ethical AI for Healthcare" >
+                  </div>
+                  <div class="col-md-6">
+                    <h3 class="h4 mb-2">Ethical AI for Healthcare</h3>
+                    <p class="mb-3">AI is rapidly transforming healthcare, but many systems focus on overall accuracy while overlooking ethical considerations. A model may perform well on average yet still deliver unequal or harmful outcomes for certain patients. This project explores how to evaluate and guide AI systems to be not only fair but also ethical—promoting well-being, avoiding harm, ensuring equity, and fostering trust—without relying on sensitive demographic attributes.</p>
                     <a class="btn btn-outline-primary" href="#contact">Collaborate</a>
                   </div>
                 </div>
@@ -400,7 +605,48 @@
       </div>
     </section>
 
-    <section class="section bg-light" id="contact">
+    <section class="section bg-light" id="funding">
+      <div class="container">
+        <h2>Funding and Grants</h2>
+
+        <div class="row funding-row g-4 justify-content-center align-items-stretch text-center mt-3">
+          <div class="col-6 col-sm-4 col-md-3 funding-item">
+            <a href="https://www.nih.gov" target="_blank" rel="noopener">
+              <div class="funding-tile">
+                <img src="pic/NIH.jpeg" alt="NIH" class="funding-logo">
+              </div>
+            </a>
+          </div>
+
+          <div class="col-6 col-sm-4 col-md-3 funding-item">
+            <a href="https://www.nsf.gov" target="_blank" rel="noopener">
+              <div class="funding-tile">
+                <img src="pic/NSF.png" alt="NSF" class="funding-logo">
+              </div>
+            </a>
+          </div>
+
+          <div class="col-6 col-sm-4 col-md-3 funding-item">
+            <a href="https://www.syracuse.edu/" target="_blank" rel="noopener">
+              <div class="funding-tile">
+                <img src="pic/SU1.png" alt="ASU Research" class="funding-logo">
+              </div>
+            </a>
+          </div>
+
+          <div class="col-6 col-sm-4 col-md-3 funding-item">
+            <a href="https://www.asu.edu/" target="_blank" rel="noopener">
+              <div class="funding-tile">
+                <img src="pic/asu-mayo-alliance.png" alt="ASU–Mayo Alliance" class="funding-logo">
+              </div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section" id="contact">
       <div class="container">
         <h2>Contact</h2>
         <!-- <form action="https://formspree.io/f/mjkezgdb" method="POST">
