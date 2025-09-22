@@ -238,6 +238,10 @@
             <a class="nav-link" id="tab-ethical-ai-for-healthcare" data-bs-toggle="tab" href="#proj-ethical-ai-for-healthcare" role="tab"
               aria-controls="proj-ethical-ai-for-healthcare" aria-selected="false">Ethical Ai For healthcare</a>
           </li>
+          <li class="nav-item flex-fill text-center" style="padding-right: 0%;" role="presentation">
+            <a class="nav-link" id="tab-interpretable-ai" data-bs-toggle="tab" href="#proj-interpretable-ai" role="tab"
+              aria-controls="proj-interpretable-ai" aria-selected="false">Interpretable Ai</a>
+          </li>
         </ul>
 
         <!-- Tab content -->
@@ -248,19 +252,64 @@
           <div class="tab-pane fade show active" id="proj-stress-sensing" role="tabpanel" aria-labelledby="tab-stress-sensing">
             <div class="card shadow-sm border-0">
               <div class="card-body">
-                <div class="row align-items-center g-4">
-                  <div class="col-md-6">
-                    <img class="project-img" src="pic/HHISS.png" alt="Human Heterogeneity Invariant Stress Sensing">
+
+                <div id="projectSecurityCarousel" class="carousel slide" data-bs-ride="false" data-bs-interval="6000">
+                  <!-- Indicators -->
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#projectSecurityCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#projectSecurityCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
                   </div>
-                  <div class="col-md-6">
-                    <h3 class="h4 mb-2">Human Heterogeneity Invariant Stress Sensing</h3>
-                    <p class="mb-3">Human heterogeneity remains a persistent challenge in wearable-based stress sensing. In this paper, we introduce a pruning-based framework designed to improve AI model generalizability, achieving a 7.8-percentage-point increase in stress detection accuracy under fully unseen subjects and environments.</p>
-                    <a class="btn btn-outline-primary" href="#contact">Collaborate</a>
+
+                  <div class="carousel-inner">
+                    <!-- SLIDE 1 -->
+                    <div class="carousel-item active">
+                      <div class="row align-items-center g-4">
+                        <div class="col-md-6">
+                          <img class="project-img" src="pic/HHISS.png" alt="Human Heterogeneity Invariant Stress Sensing">
+                        </div>
+                        <div class="col-md-6 d-flex flex-column justify-content-center">
+                          <h3 class="h4 mb-2">Human Heterogeneity Invariant Stress Sensing</h3>
+                          <p class="mb-3">
+                            Human heterogeneity remains a persistent challenge in wearable-based stress sensing. We introduce a pruning-based framework
+                            that improves generalizability, yielding a 7.8-point accuracy gain under fully unseen subjects and environments.
+                          </p>
+                          <a class="btn btn-outline-primary btn-sm w-auto align-self-start" href="#contact">Collaborate</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- SLIDE 2 (sample second panel; reuse image or swap to another when ready) -->
+                    <div class="carousel-item">
+                      <div class="row align-items-center g-4">
+                        <div class="col-md-6">
+                          <img class="project-img" src="pic/robust_ai.png" alt="Stress Sensing—Domain Shift Robustness">
+                        </div>
+                        <div class="col-md-6 d-flex flex-column justify-content-center">
+                          <h3 class="h4 mb-2">CRoP: Context-wise Robust Personalization for Human Sensing</h3>
+                          <p class="mb-3">
+                            Human sensing applications often struggle with distribution shifts caused by changing user contexts—such as device placement, environment, or health status—that limit model reliability. We introduce CRoP, a lightweight personalization framework that adapts generic pre-trained models to individual users while preserving robustness across unseen contexts. By using adaptive pruning to capture user-specific traits and restoring generic knowledge, CRoP achieves both strong personalization and intra-user generalization. Validated on multiple health and activity sensing datasets, CRoP significantly improves performance and demonstrates the feasibility of on-device personalization for real-world human-centric applications.
+                          </p>
+                          <a class="btn btn-outline-primary btn-sm w-auto align-self-start" href="#contact">Collaborate</a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+
+                  <!-- Controls -->
+                  <button class="carousel-control-prev" type="button" data-bs-target="#projectSecurityCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#projectSecurityCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
                 </div>
+
               </div>
             </div>
           </div>
+
 
           <!-- Project 2 -->
           <div class="tab-pane fade" id="proj-co-teaching" role="tabpanel" aria-labelledby="tab-co-teaching">
@@ -424,6 +473,24 @@
                   <div class="col-md-6">
                     <h3 class="h4 mb-2">Ethical AI for Healthcare</h3>
                     <p class="mb-3">AI is rapidly transforming healthcare, but many systems focus on overall accuracy while overlooking ethical considerations. A model may perform well on average yet still deliver unequal or harmful outcomes for certain patients. This project explores how to evaluate and guide AI systems to be not only fair but also ethical—promoting well-being, avoiding harm, ensuring equity, and fostering trust—without relying on sensitive demographic attributes.</p>
+                    <a class="btn btn-outline-primary" href="#contact">Collaborate</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 8 -->
+          <div class="tab-pane fade" id="proj-interpretable-ai" role="tabpanel" aria-labelledby="tab-interpretable-ai">
+            <div class="card shadow-sm border-0">
+              <div class="card-body">
+                <div class="row align-items-center g-4">
+                  <div class="col-md-6">
+                    <img class="project-img" src="pic/interpret_ai.png" alt="Interpretable AI" >
+                  </div>
+                  <div class="col-md-6">
+                    <h3 class="h4 mb-2">Psychophysiological arousal in young children who stutter: An interpretable AI approach</h3>
+                    <p class="mb-3">This project investigates how physiological signals such as heart rate, respiration, and skin conductance reflect differences in arousal between preschool-age children who stutter and those who do not. Using a novel multi-instance learning framework combined with explainable AI tools, we identify fine-grained, second-by-second patterns that distinguish these groups during stressful speaking and narration tasks. Beyond group-level insights into stuttering development, the approach also enables personalized, real-time assessments that could inform just-in-time interventions. This work highlights how interpretable AI can deepen our understanding of speech disorders while ensuring transparency and clinical relevance .</p>
                     <a class="btn btn-outline-primary" href="#contact">Collaborate</a>
                   </div>
                 </div>
