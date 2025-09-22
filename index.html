@@ -119,6 +119,20 @@
       z-index: 5;
       opacity: .95;
     }
+    #projectStressCarousel .carousel-control-prev,
+    #projectStressCarousel .carousel-control-next {
+      position: absolute;
+      top: .5rem;
+      bottom: auto;
+      transform: none;
+      width: auto;
+      height: auto;
+      padding: 0;
+      align-items: flex-start;
+      justify-content: center;
+      z-index: 5;
+      opacity: .95;
+    }
     .funding-row { gap: 1.25rem; }
     .funding-item .funding-tile {
       min-height: 96px;
@@ -146,9 +160,6 @@
       .funding-item .funding-logo { max-height: 76px; }
     }
     
-
-
-
     /* @media (max-width: 767.98px) {
       .project-img {
         max-height: 220px;
@@ -247,17 +258,17 @@
         <!-- Tab content -->
         <div class="tab-content" id="projectContent">
 
-
           <!-- Project 1 -->
           <div class="tab-pane fade show active" id="proj-stress-sensing" role="tabpanel" aria-labelledby="tab-stress-sensing">
             <div class="card shadow-sm border-0">
               <div class="card-body">
 
-                <div id="projectSecurityCarousel" class="carousel slide" data-bs-ride="false" data-bs-interval="6000">
+                <div id="projectStressCarousel" class="carousel slide" data-bs-ride="false" data-bs-interval="6000">
                   <!-- Indicators -->
                   <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#projectSecurityCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#projectSecurityCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#projectStressCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#projectStressCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#projectStressCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
                   </div>
 
                   <div class="carousel-inner">
@@ -278,16 +289,34 @@
                       </div>
                     </div>
 
-                    <!-- SLIDE 2 (sample second panel; reuse image or swap to another when ready) -->
+                    <!-- SLIDE 2 -->
+                    <div class="carousel-item">
+                      <div class="row align-items-center g-4">
+                        <div class="col-md-6">
+                          <img class="project-img" src="pic/speech.png" alt="Psychophysiology-aided Speech Analysis">
+                        </div>
+                        <div class="col-md-6 d-flex flex-column justify-content-center">
+                          <h3 class="h4 mb-2">Psychophysiology-aided Perceptually Fluent Speech Analysis of Children Who Stutter</h3>
+                          <p class="mb-3">
+                            PASAD: a real-time system that leverages physiological signals to reveal subtle speech-motor control differences,
+                            enabling earlier and more personalized stuttering interventions.
+                          </p>
+                          <a class="btn btn-outline-primary btn-sm w-auto align-self-start" href="#contact">Collaborate</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- SLIDE 3 -->
                     <div class="carousel-item">
                       <div class="row align-items-center g-4">
                         <div class="col-md-6">
                           <img class="project-img" src="pic/robust_ai.png" alt="Stress Sensing—Domain Shift Robustness">
                         </div>
                         <div class="col-md-6 d-flex flex-column justify-content-center">
-                          <h3 class="h4 mb-2">CRoP: Context-wise Robust Personalization for Human Sensing</h3>
+                          <h3 class="h4 mb-2">CRoP: Context-wise Robust Personalization</h3>
                           <p class="mb-3">
-                            Human sensing applications often struggle with distribution shifts caused by changing user contexts—such as device placement, environment, or health status—that limit model reliability. We introduce CRoP, a lightweight personalization framework that adapts generic pre-trained models to individual users while preserving robustness across unseen contexts. By using adaptive pruning to capture user-specific traits and restoring generic knowledge, CRoP achieves both strong personalization and intra-user generalization. Validated on multiple health and activity sensing datasets, CRoP significantly improves performance and demonstrates the feasibility of on-device personalization for real-world human-centric applications.
+                            A lightweight personalization framework that adapts generic models to individuals while preserving robustness
+                            across unseen contexts—suited for on-device human-centric sensing.
                           </p>
                           <a class="btn btn-outline-primary btn-sm w-auto align-self-start" href="#contact">Collaborate</a>
                         </div>
@@ -296,11 +325,11 @@
                   </div>
 
                   <!-- Controls -->
-                  <button class="carousel-control-prev" type="button" data-bs-target="#projectSecurityCarousel" data-bs-slide="prev">
+                  <button class="carousel-control-prev" type="button" data-bs-target="#projectStressCarousel" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                   </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#projectSecurityCarousel" data-bs-slide="next">
+                  <button class="carousel-control-next" type="button" data-bs-target="#projectStressCarousel" data-bs-slide="next">
                     <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                   </button>
@@ -309,6 +338,7 @@
               </div>
             </div>
           </div>
+
 
 
           <!-- Project 2 -->
