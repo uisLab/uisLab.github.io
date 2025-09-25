@@ -119,6 +119,22 @@
       z-index: 5;
       opacity: .95;
     }
+    /* #projectStressCarousel .carousel-control-prev,
+    #projectStressCarousel .carousel-control-next {
+      position: absolute;
+      top: .5rem;
+      bottom: auto;
+      transform: none;
+      width: auto;
+      height: auto;
+      padding: 0;
+      align-items: flex-start;
+      justify-content: center;
+      z-index: 5;
+      opacity: .95;
+    } */
+    #projectInterpretableCarousel .carousel-control-prev,
+    #projectInterpretableCarousel .carousel-control-next,
     #projectStressCarousel .carousel-control-prev,
     #projectStressCarousel .carousel-control-next {
       position: absolute;
@@ -133,6 +149,7 @@
       z-index: 5;
       opacity: .95;
     }
+
     .funding-row { gap: 1.25rem; }
     .funding-item .funding-tile {
       min-height: 96px;
@@ -268,7 +285,6 @@
                   <div class="carousel-indicators">
                     <button type="button" data-bs-target="#projectStressCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#projectStressCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#projectStressCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
                   </div>
 
                   <div class="carousel-inner">
@@ -289,24 +305,7 @@
                       </div>
                     </div>
 
-                    <!-- SLIDE 2 -->
-                    <div class="carousel-item">
-                      <div class="row align-items-center g-4">
-                        <div class="col-md-6">
-                          <img class="project-img" src="pic/speech.png" alt="Psychophysiology-aided Speech Analysis">
-                        </div>
-                        <div class="col-md-6 d-flex flex-column justify-content-center">
-                          <h3 class="h4 mb-2">Psychophysiology-aided Perceptually Fluent Speech Analysis of Children Who Stutter</h3>
-                          <p class="mb-3">
-                            PASAD: a real-time system that leverages physiological signals to reveal subtle speech-motor control differences,
-                            enabling earlier and more personalized stuttering interventions.
-                          </p>
-                          <a class="btn btn-outline-primary btn-sm w-auto align-self-start" href="#contact">Collaborate</a>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- SLIDE 3 -->
+                    <!-- SLIDE 2 (previously Slide 3) -->
                     <div class="carousel-item">
                       <div class="row align-items-center g-4">
                         <div class="col-md-6">
@@ -338,7 +337,6 @@
               </div>
             </div>
           </div>
-
 
 
           <!-- Project 2 -->
@@ -514,16 +512,60 @@
           <div class="tab-pane fade" id="proj-interpretable-ai" role="tabpanel" aria-labelledby="tab-interpretable-ai">
             <div class="card shadow-sm border-0">
               <div class="card-body">
-                <div class="row align-items-center g-4">
-                  <div class="col-md-6">
-                    <img class="project-img" src="pic/interpret_ai.png" alt="Interpretable AI" >
+
+                <div id="projectInterpretableCarousel" class="carousel slide" data-bs-ride="false" data-bs-interval="6000">
+                  <!-- Indicators -->
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#projectInterpretableCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#projectInterpretableCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
                   </div>
-                  <div class="col-md-6">
-                    <h3 class="h4 mb-2">Psychophysiological arousal in young children who stutter: An interpretable AI approach</h3>
-                    <p class="mb-3">This project investigates how physiological signals such as heart rate, respiration, and skin conductance reflect differences in arousal between preschool-age children who stutter and those who do not. Using a novel multi-instance learning framework combined with explainable AI tools, we identify fine-grained, second-by-second patterns that distinguish these groups during stressful speaking and narration tasks. Beyond group-level insights into stuttering development, the approach also enables personalized, real-time assessments that could inform just-in-time interventions. This work highlights how interpretable AI can deepen our understanding of speech disorders while ensuring transparency and clinical relevance .</p>
-                    <a class="btn btn-outline-primary" href="#contact">Collaborate</a>
+
+                  <div class="carousel-inner">
+                    <!-- SLIDE 1: Interpretable AI (your provided text) -->
+                    <div class="carousel-item active">
+                      <div class="row align-items-center g-4">
+                        <div class="col-md-6">
+                          <img class="project-img" src="pic/interpret_ai.png" alt="Interpretable AI">
+                        </div>
+                        <div class="col-md-6 d-flex flex-column justify-content-center">
+                          <h3 class="h4 mb-2">Psychophysiological arousal in young children who stutter: An interpretable AI approach</h3>
+                          <p class="mb-3">
+                            This project investigates how physiological signals such as heart rate, respiration, and skin conductance reflect differences in arousal between preschool-age children who stutter and those who do not. Using a novel multi-instance learning framework combined with explainable AI tools, we identify fine-grained, second-by-second patterns that distinguish these groups during stressful speaking and narration tasks. Beyond group-level insights into stuttering development, the approach also enables personalized, real-time assessments that could inform just-in-time interventions. This work highlights how interpretable AI can deepen our understanding of speech disorders while ensuring transparency and clinical relevance .
+                          </p>
+                          <a class="btn btn-outline-primary btn-sm w-auto align-self-start" href="#contact">Collaborate</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- SLIDE 2: PASAD (moved from Project 1 Slide 2) -->
+                    <div class="carousel-item">
+                      <div class="row align-items-center g-4">
+                        <div class="col-md-6">
+                          <img class="project-img" src="pic/speech.png" alt="Psychophysiology-aided Speech Analysis">
+                        </div>
+                        <div class="col-md-6 d-flex flex-column justify-content-center">
+                          <h3 class="h4 mb-2">Psychophysiology-aided Perceptually Fluent Speech Analysis of Children Who Stutter</h3>
+                          <p class="mb-3">
+                            PASAD: a real-time system that leverages physiological signals to reveal subtle speech-motor control differences,
+                            enabling earlier and more personalized stuttering interventions.
+                          </p>
+                          <a class="btn btn-outline-primary btn-sm w-auto align-self-start" href="#contact">Collaborate</a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+
+                  <!-- Controls -->
+                  <button class="carousel-control-prev" type="button" data-bs-target="#projectInterpretableCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#projectInterpretableCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
                 </div>
+
               </div>
             </div>
           </div>
